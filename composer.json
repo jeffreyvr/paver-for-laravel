@@ -1,0 +1,65 @@
+{
+  "name": "jeffreyvanrossum/paver-for-laravel",
+  "description": "Block based drag and drop editor built with Alpine.js.",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Jeffrey van Rossum",
+      "email": "jeffrey@vanrossum.dev"
+    }
+  ],
+  "require": {
+    "php": "^8.1",
+    "illuminate/contracts": "^10.0|^11.0",
+    "jeffreyvanrossum/paver": "dev-main"
+  },
+  "require-dev": {
+    "larastan/larastan": "^2.9",
+    "laravel/pint": "^1.0",
+    "orchestra/testbench": "^8.0|^9.0",
+    "pestphp/pest": "^2.34",
+    "pestphp/pest-plugin-laravel": "^2.0",
+    "phpstan/extension-installer": "^1.1",
+    "phpstan/phpstan-deprecation-rules": "^1.0",
+    "phpstan/phpstan-phpunit": "^1.0",
+    "phpunit/phpunit": "^10.4",
+    "spatie/laravel-ray": "^1.28",
+    "spatie/x-ray": "^1.1"
+  },
+  "autoload": {
+    "psr-4": {
+      "Jeffreyvr\\PaverForLaravel\\": "src"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Jeffreyvr\\PaverForLaravel\\Tests\\": "tests"
+    }
+  },
+  "scripts": {
+    "post-autoload-dump": "@php ./vendor/bin/testbench package:discover --ansi",
+    "analyse": "vendor/bin/phpstan analyse",
+    "test": "vendor/bin/pest",
+    "test-coverage": "vendor/bin/pest --coverage",
+    "format": "vendor/bin/pint"
+  },
+  "config": {
+    "sort-packages": true,
+    "allow-plugins": {
+      "pestphp/pest-plugin": true,
+      "phpstan/extension-installer": true
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Jeffreyvr\\PaverForLaravel\\PaverServiceProvider"
+      ],
+      "aliases": {
+        "Paver": "Jeffreyvr\\PaverForLaravel\\Facades\\Paver"
+      }
+    }
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true
+}
