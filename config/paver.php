@@ -1,29 +1,58 @@
 <?php
 
 return [
-    /**
-     * Register blocks.
-     */
+
+    /*
+    |--------------------------------------------------------------------------
+    | Registered Blocks
+    |--------------------------------------------------------------------------
+    |
+    | Here you may specify the blocks that should be available within your
+    | instance of Paver. Simply provide the class name of each block.
+    |
+    */
+
     'blocks' => [
-        // Jeffreyvr\Paver\Blocks\Example::class
+        // Jeffreyvr\Paver\Blocks\Example::class,
     ],
 
-    /**
-     * Flag to either have Paver load Alpine.js, or otherwise, load it yourself.
-     */
+    /*
+    |--------------------------------------------------------------------------
+    | Alpine.js
+    |--------------------------------------------------------------------------
+    |
+    | This option controls whether Paver should automatically include Alpine.js.
+    | You can disable this if you wish to manage the loading manually.
+    |
+    */
+
     'alpine' => true,
 
-    /**
-     * Frame.
-     */
+    /*
+    |--------------------------------------------------------------------------
+    | Frame Templates
+    |--------------------------------------------------------------------------
+    |
+    | Define the templates for the frame. These templates will be used for
+    | the head and footer sections of the editor frame.
+    |
+    */
+
     'frame' => [
         'head_template' => null,
         'footer_template' => null,
     ],
 
-    /**
-     * Endpoints.
-     */
+    /*
+    |--------------------------------------------------------------------------
+    | API Endpoints
+    |--------------------------------------------------------------------------
+    |
+    | Here you may specify the endpoints used by Paver. You can customize the
+    | URIs according to your application needs.
+    |
+    */
+
     'endpoints' => [
         'options' => '/options',
         'render' => '/render',
@@ -31,13 +60,28 @@ return [
         'resolve' => '/resolve',
     ],
 
-    /**
-     * Add CSRF token to paver endpoint requests.
-     */
+    /*
+    |--------------------------------------------------------------------------
+    | CSRF Protection
+    |--------------------------------------------------------------------------
+    |
+    | If your application uses CSRF protection, you may enable it here to
+    | include the CSRF token in requests made to Paver endpoints.
+    |
+    */
+
     'csrf' => true,
 
-    /**
-    * Enabling debug mode will let Paver log info to the console.
+    /*
+    |--------------------------------------------------------------------------
+    | Debug Mode
+    |--------------------------------------------------------------------------
+    |
+    | Enabling this option will allow Paver to log additional information to
+    | the console, which can assist in debugging during development.
+    |
     */
+
    'debug' => false,
+
 ];
