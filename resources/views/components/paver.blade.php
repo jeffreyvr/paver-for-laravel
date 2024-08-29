@@ -1,6 +1,13 @@
 @props([
     'content' => [],
-    'config' => []
+    'config' => [],
+    'locale' => app()->getLocale()
 ])
 
-{!! app(Jeffreyvr\Paver\Paver::class)->render($content, $config) !!}
+@php
+$paver = app(Jeffreyvr\Paver\Paver::class);
+
+$paver->locale = $locale;
+@endphp
+
+{!! $paver->render($content, $config) !!}
