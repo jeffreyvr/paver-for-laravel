@@ -11,7 +11,7 @@
   "require": {
     "php": "^8.1",
     "illuminate/contracts": "^10.0|^11.0",
-    "jeffreyvanrossum/paver": "^0.0.3"
+    "jeffreyvanrossum/paver": "^0.0.5"
   },
   "require-dev": {
     "larastan/larastan": "^2.9",
