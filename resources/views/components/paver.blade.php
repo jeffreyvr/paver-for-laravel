@@ -1,8 +1,7 @@
 @props([
     'content' => [],
     'config' => [],
-    'locale' => app()->getLocale(),
-    'blocks' => []
+    'locale' => app()->getLocale()
 ])
 
 @php
@@ -10,8 +9,15 @@ $paver = app(Jeffreyvr\Paver\Paver::class);
 
 $paver->locale = $locale;
 
-foreach ($blocks as $block) {
-    $paver->registerBlock($block);
+if(array_key_exists('blocks', $config)) {
+    foreach ($config['blocks'] as $block)
+    {
+        try {
+            $paver->registerBlock($block);
+        } catch (\Throwable $th) {
+            throw new \Exception("Block {$block} cannot be added.");
+        }
+    }
 }
 
 @endphp
