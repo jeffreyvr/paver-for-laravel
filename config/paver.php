@@ -45,20 +45,30 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | API Endpoints
+    | API Endpoint
     |--------------------------------------------------------------------------
     |
-    | Here you may specify the endpoints used by Paver. You can customize the
-    | URIs according to your application needs.
+    | The single endpoint Paver talks to. Point a POST route at it that hands
+    | the request to Jeffreyvr\Paver\Endpoints\Handler::run(), for example:
+    |
+    |     Route::middleware('paver')->post('/paver', fn () => Handler::run());
     |
     */
 
-    'endpoints' => [
-        'options' => '/options',
-        'render' => '/render',
-        'fetch' => '/fetch',
-        'resolve' => '/resolve',
-    ],
+    'endpoint' => '/paver',
+
+    /*
+    | Deprecated: a separate endpoint per action. Still honoured when the
+    | 'endpoint' above is null, but Paver's per-action setup is deprecated and
+    | will be removed. Prefer the single endpoint.
+    |
+    | 'endpoints' => [
+    |     'options' => '/options',
+    |     'render' => '/render',
+    |     'fetch' => '/fetch',
+    |     'resolve' => '/resolve',
+    | ],
+    */
 
     /*
     |--------------------------------------------------------------------------
@@ -82,6 +92,6 @@ return [
     |
     */
 
-   'debug' => false,
+    'debug' => false,
 
 ];

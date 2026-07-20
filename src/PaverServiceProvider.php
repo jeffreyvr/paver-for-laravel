@@ -2,9 +2,9 @@
 
 namespace Jeffreyvr\PaverForLaravel;
 
-use Jeffreyvr\Paver\Paver;
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
+use Jeffreyvr\Paver\Paver;
 use Jeffreyvr\PaverForLaravel\Components\PaverComponent;
 
 class PaverServiceProvider extends ServiceProvider
@@ -54,7 +54,14 @@ class PaverServiceProvider extends ServiceProvider
                 $paver->frame->footerHtml = view($footerTemplate);
             }
 
-            $paver->api->setEndpoints(config('paver.endpoints'));
+            if ($endpoints = config('paver.endpoints')) {
+                // Deprecated: only present in a published config that predates
+                // the single endpoint. Checked first so mergeConfigFrom filling
+                // in the new 'endpoint' default does not override it.
+                $paver->api->setEndpoints($endpoints);
+            } else {
+                $paver->api->setEndpoint(config('paver.endpoint', '/paver'));
+            }
 
             if (config('paver.csrf')) {
                 $paver->api->setHeader('X-CSRF-TOKEN', csrf_token());
