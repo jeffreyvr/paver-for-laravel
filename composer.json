@@ -11,7 +11,7 @@
   "require": {
     "php": "^8.2",
     "illuminate/contracts": "^10.0|^11.0|^12.0",
-    "jeffreyvanrossum/paver": "^0.2.0"
+    "jeffreyvanrossum/paver": "^0.3.0"
   },
   "require-dev": {
     "larastan/larastan": "^2.9",
@@ -48,6 +48,9 @@
     "allow-plugins": {
       "pestphp/pest-plugin": true,
       "phpstan/extension-installer": true
+    },
+    "platform": {
+      "php": "8.2.0"
     }
   },
   "extra": {

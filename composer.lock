@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e837ee59a5c7e523e3676ac338a80ba6",
+    "content-hash": "e2a2a92a2bd6021f86338cd6f940fd25",
     "packages": [
         {
             "name": "brick/math",
@@ -1054,24 +1054,24 @@
         },
         {
             "name": "jeffreyvanrossum/paver",
-            "version": "0.2.0",
+            "version": "0.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/jeffreyvr/paver.git",
-                "reference": "9a5a9c1e5055a2285e3ec2d01483f63dfeebedd8"
+                "reference": "c32663cbde45a24ad64c8963d04656704683fecb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jeffreyvr/paver/zipball/9a5a9c1e5055a2285e3ec2d01483f63dfeebedd8",
-                "reference": "9a5a9c1e5055a2285e3ec2d01483f63dfeebedd8",
+                "url": "https://api.github.com/repos/jeffreyvr/paver/zipball/c32663cbde45a24ad64c8963d04656704683fecb",
+                "reference": "c32663cbde45a24ad64c8963d04656704683fecb",
                 "shasum": ""
             },
             "require": {
-                "php": "^8.0|^8.1|^8.2"
+                "php": "^8.0"
             },
             "require-dev": {
                 "laravel/pint": "^1.4",
-                "pestphp/pest": "*",
+                "pestphp/pest": "^3.0",
                 "spatie/ray": "^1.36",
                 "spatie/x-ray": "^1.1"
             },
@@ -1097,7 +1097,7 @@
             "description": "Block based drag and drop editor for developers.",
             "support": {
                 "issues": "https://github.com/jeffreyvr/paver/issues",
-                "source": "https://github.com/jeffreyvr/paver/tree/0.2.0"
+                "source": "https://github.com/jeffreyvr/paver/tree/0.3.0"
             },
             "funding": [
                 {
@@ -1105,7 +1105,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2026-01-20T11:37:53+00:00"
+            "time": "2026-07-20T05:30:55+00:00"
         },
         {
             "name": "laravel/framework",
@@ -10898,5 +10898,8 @@
         "php": "^8.2"
     },
     "platform-dev": {},
+    "platform-overrides": {
+        "php": "8.2.0"
+    },
     "plugin-api-version": "2.9.0"
 }
